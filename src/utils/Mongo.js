@@ -26,10 +26,12 @@ class Mongo {
               }
 
               resolve(docs);
+
+              //close MongoDb connection after query
+              db.close();
             });
 
-            //close MongoDb connection after query
-            db.close();
+
 
       });
 
@@ -54,9 +56,9 @@ class Mongo {
             reject(err);
           }
           resolve(result);
-        });
 
-        db.close();
+          db.close();
+        });
 
       });
 

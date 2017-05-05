@@ -31,10 +31,10 @@ module.exports = function() {
   const app = this;
 
   // Initialize our service with any options it requires
-  app.use('/ma3routetraffics', new TrafficService());
+  app.use('/ma3routetraffic', new TrafficService());
 
   // Get our initialize service to that we can bind hooks
-  const ma3routetrafficService = app.service('/ma3routetraffics');
+  const ma3routetrafficService = app.service('/ma3routetraffic');
 
   // Set up our before hooks
   ma3routetrafficService.before(hooks.before);

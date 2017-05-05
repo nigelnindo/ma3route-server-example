@@ -7,11 +7,9 @@ class Mongo {
     this.MONGO_CONNECTION_URL = 'mongodb://localhost:27017/ma3route';
   }
 
-  getDocuments(dbName, collectionName){
+  getDocuments(collectionName){
 
     return new Promise((resolve, reject) => {
-
-      console.log("Get documents function called");
 
       MongoClient.connect(this.MONGO_CONNECTION_URL,
         function(err,db){
@@ -39,14 +37,12 @@ class Mongo {
 
   }
 
-  insertDocuments(dbName, collectionName, documents){
-
-    console.log("insert document function called");
+  insertDocuments(collectionName, documents){
 
     return new Promise((resolve,reject) => {
 
-      mongoClient.open(this.MONGO_CONNECTION_URL,
-        function(err, mongoClient){
+      MongoClient.connect(this.MONGO_CONNECTION_URL,
+        function(err, db){
         if (err){
           reject(err);
         }

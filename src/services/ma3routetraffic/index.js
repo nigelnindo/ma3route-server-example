@@ -9,31 +9,26 @@ class TrafficService{
 
   constructor(){
     this.mongo = new Mongo();
-    this.DB_NAME = "ma3route";
     this.COLLECTION_NAME = "trafficupdates";
   }
 
   find(params){
-    return this.mongo.getDocuments("ma3route","trafficupdates");
+    /**
+    * Return all documents in the database
+    **/
+    return this.mongo.getDocuments(this.COLLECTION_NAME);
   }
 
   get(id,params){
+    /**
+    * Return documents matching specific id
+    **/
     return Promise.resolve([]);
   }
 }
 
 module.exports = function() {
   const app = this;
-
-  /*
-  const options = {
-    Model: ma3routetraffic,
-    paginate: {
-      default: 5,
-      max: 25
-    }
-  };
-  */
 
   // Initialize our service with any options it requires
   app.use('/ma3routetraffics', new TrafficService());

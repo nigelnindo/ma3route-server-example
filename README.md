@@ -14,13 +14,13 @@ There is also a GET route `/ma3routetraffic` for retrieving the stored MongoDB d
 
 ### Before you begin
 
-Define `MA3_API_KEY` and `MA3_API_SECRET` environment variables otherwise the poller will throw an `AuthenticationRequiredError` when you run the project. Contact the [Ma3Route Team](https://www.ma3route.com/contact-us) for provision of a valid API Key and API Secret.
+Define `MA3_API_KEY` and `MA3_API_SECRET` environment variables otherwise the poller will throw an `AuthenticationRequiredError` when you run the project. Contact the [Ma3Route Team](https://www.ma3route.com/contact-us) for provision of a valid **API Key** and **API Secret**.
 
 Have MongoDB server running on the default `localhost` and port `27017`
 
 This project depends on [ma3route-sdk](https://github.com/Ma3Route/node-sdk). Documentation for the sdk can be found [here](https://ma3route.github.io/node-sdk).
 
-[ma3route-sdk](https://github.com/Ma3Route/node-sdk) is simply a helper wrapper around the main Ma3Route API. For lesser abstraction over the Ma3Route API, you can access the documentation [here](https://bitbucket.org/ma3route_team/ma3route-api-documentation/wiki/Updates.md).
+[ma3route-sdk](https://github.com/Ma3Route/node-sdk) is simply a helper wrapper around the main Ma3Route API. For lesser abstraction over the Ma3Route API, you can access the documentation [here](https://bitbucket.org/ma3route_team/ma3route-api-documentation/wiki/Home).
 
 ### Starting the server
 
@@ -42,6 +42,7 @@ Getting up and running is as easy as 1, 2, 3.
 ## Todo
 
 - Avoid storing duplicate traffic updates, either by enforcing unique constraints on the database, or making use of API offsets, or both.
+- Add support for GET with `:id` to fetch specific traffic update.
 
 ## Testing
 
